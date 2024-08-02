@@ -1,0 +1,255 @@
+@charset "utf-8";
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url(./gallery.css);
+
+body{
+    font-family: "Poppins", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+*{margin: 0; padding: 0; box-sizing: border-box; list-style: none; text-decoration: none;}
+
+button{
+    border: none; background: none; outline: none;
+}
+
+
+
+#section0{
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+}
+
+.noise{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-image: url('https://i.ibb.co/x3TCktM/645cbb8ec449398255b76326-noise.gif');
+    background-position: 0 0;
+    background-size: auto;
+    pointer-events: none;
+    opacity: 0.05;
+    visibility: visible;
+}
+.glassy-overlay {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 160%;
+    background: radial-gradient(55.73% 55.73% at 50% 53.15%, #0000ff 30%, rgba(255, 255, 255, 0.00)80%);
+    backdrop-filter: blur(32px);
+    pointer-events: none;
+}
+
+#fp-nav.fp-right{
+    right: 100px;
+}
+#fp-nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center; justify-content: center;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span{
+    transform: translate(-25%, -25%);
+    width: 14px; height: 14px; 
+    background: none; border: 1px solid #fff; border-radius: 100%; 
+    border: 1.5px dashed #555 !important;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span{
+    height: 24px;
+    border-radius: 100px;
+    background: #00F;
+    margin-left: -1px;
+    border: none;
+    border: 1.5px dashed #00F !important;
+}
+
+/* 햄버거 버튼 */
+.btn_menu{
+    width: 90px; height: 40px; position: fixed; z-index: 501; right: 260px; top: 30px; cursor: pointer;
+}
+.btn_menu span{
+    position: absolute; left: 0; top: 0;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.btn_menu span:nth-child(2){
+    left: 30px;
+}
+.btn_menu span:last-child{
+    left: 50px;
+}
+
+/* btn on class */
+.btn_menu.on span:first-child{
+    transform: translateX(130%); opacity: 0;
+}
+.btn_menu.on span:nth-child(2){
+    transform: translateX(50%); opacity: 0;
+}
+.btn_menu.on span:last-child{
+    transform: rotate(90deg);
+}
+
+/* 주메뉴 */
+nav{
+    position: fixed; z-index: 11;
+    width: 100%;
+    top: 34px; left: 260px;
+}
+nav>ul>li{
+    font-weight: 400; color: #111; font-size: 16px; transition: all 0.2s ease-in-out;
+}
+
+/* allmenu */
+#allmenu_wrap{
+    width: 100%; height: 100%;
+    background: #000; position: fixed; z-index: 500; transform: translateX(100%); opacity: 0;  transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+#allmenu_wrap.on{
+    transform: translateX(0); opacity: 1; 
+}
+#allmenu_wrap #allmenu_bottom{
+    width: 1080px; height: auto; margin: 0 auto;
+    position: absolute; z-index: 500; left: 50%; top: 50%; transform: translate(-50%,-50%);
+    color: #fff; 
+}
+#allmenu_wrap #allmenu{
+    display: flex; gap:200px; align-items: flex-end; 
+}
+#allmenu_wrap #allmenu .menu{
+    width: 100%;
+}
+#allmenu_wrap #allmenu .menu ul>li{
+    margin-bottom: 24px; overflow: hidden;
+}
+#allmenu_wrap #allmenu .menu ul>li:last-child{
+    margin-bottom: 0px;
+}
+#allmenu_wrap #allmenu .menu ul>li>a{
+    display: block;  width: 200px;
+    font-size: 64px; font-weight: 600; color: #fff; letter-spacing: -1px; opacity: 0.4;
+    text-transform: lowercases;
+    transition: all 0.2s ease-in-out;
+}
+#allmenu_wrap #allmenu .menu ul>li:hover>a{
+    text-transform: uppercase;
+    transform: translateX(30px);  -webkit-text-stroke: 1px #fff;
+    opacity: 1;
+}
+
+
+/* scetion */
+.section .inner{
+    width: 1400px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+/* 섹션에 active가 붙는 경우 */
+.section.active .title .title_inner h1{
+    color: #111 ;
+    opacity: 1;
+    transform: translateX(0);
+}
+.title{
+    border-bottom: 1px solid #555;
+    width: 100%;
+    position: absolute;
+    z-index: 10000;
+    padding: 90px 260px;
+    margin-top: 106px;
+}
+.title .title_inner{
+    width: 1400px;
+    margin: 0 auto;
+    display: flex;
+}
+.title .title_inner h1{
+    color: #111;
+    font-size: 80px;
+    font-weight: 800;
+    line-height: 90%;
+    position: relative;
+}
+.title .title_inner h1::after{
+    content: '(01)';
+    position: absolute; top: -20px; right: 0; margin-right: -32px;
+    color: #111;
+    font-size: 16px;
+    font-weight: 300;
+}
+.title .title_inner h1{
+    font-size: 80px; text-align: center; font-weight: 800;
+    color: #ffffff00 ;
+    opacity: 0; transform: translateX(-200%);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-delay: .5s;
+    text-align: left;
+}
+
+
+/* 포트폴리오 영역 */
+#section0 .inner{
+    width: 1400px;
+    height: 100%;
+    top: 0; left: 50%; transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 100;
+}
+#section0 .title .inner h1{
+    font-size: 60px; text-align: center; font-weight: 800; color: #ffffff00 ; -webkit-text-stroke: 2px #fff;
+    position:relative;
+    opacity: 0;
+    transform: translateY(-300%) scale(1);
+    transition: all 1.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-delay: 1s;
+}
+#section0 .inner h1>svg{
+    opacity: 0;
+    width:847px;
+    height:318px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#section0 .inner h1>svg path{
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+#section0.active .inner h1.on{
+    opacity: 1;
+    transform: translateY(0) scale(1.2);
+}
+#section0 .inner h1.on>svg{
+    opacity: 1;
+}
+
+
+/* contact */
+#section3 .inner{
+    width: 1400px;
+    height: 100%;
+}
+#section3 .inner .copy{
+    position: absolute;
+    z-index: 1000;
+    bottom: 10%; left: 50%; transform: translateX(-50%);
+}
+#section3 .inner .copy p{
+    color: #fff;
+    font-weight: 200;
+}
