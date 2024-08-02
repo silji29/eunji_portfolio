@@ -252,4 +252,15 @@ nav>ul>li{
 #section3 .inner .copy p{
     color: #fff;
     font-weight: 200;
+    text-align: center;
+}
+#section3 .inner .copy .mail{
+    margin-bottom: 4px;
+}
+#section3 .inner .copy .mail p a {
+    color: #fff;
+    font-weight: 400;
+}
+#section3 .inner .copy .mail p a:hover{
+    text-decoration: underline;
 }
