@@ -50,7 +50,7 @@ button{
     background: radial-gradient(55.73% 55.73% at 50% 53.15%, #0000ff 10%, rgba(255, 255, 255, 0.00)80%);
     backdrop-filter: blur(40px);
     pointer-events: none;
-    background: radial-gradient(40deg at 40deg, rgb(199, 121, 208),  rgb(75, 192, 200),  #2b3074);
+    background: radial-gradient(10% at 10%, rgb(199, 121, 208),  rgb(75, 192, 200),  #2b3074);
     -webkit-animation: huerotator 15s infinite alternate;
     animation: huerotator 15s infinite alternate;
 }
