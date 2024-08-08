@@ -217,7 +217,6 @@ let nav = document.querySelector('nav');
 let allmenu = document.getElementById('allmenu_wrap');
 let menu_btn = document.querySelectorAll('#allmenu .menu ul li')
 
-console.log(btn,nav,allmenu,menu_btn);
 
 // 2. 이벤트 발생
 btn.addEventListener('click',function(){
@@ -250,8 +249,36 @@ $(function(){
         $('.list_wrap').hide();
         $('.list_wrap').eq(num).fadeIn(1000);
     })
-})
 
+	// section 2 프로젝트
+	$('.title_inner .tab_list li').on('click',function(){
+		let num = $(this).index();
+
+		$('.tab_list li').removeClass('on');
+		$(this).addClass('on');
+
+		if(num == 0){
+            $('.project_slide').hide();
+            $('.project_slide').eq(0).fadeIn(800);
+        }else if(num == 1) {
+            $('.project_slide').hide();
+            $('.project_slide').eq(1).fadeIn(800);
+        }else{
+			$('.project_slide').hide();
+            $('.project_slide').eq(2).fadeIn(800);
+		}
+
+		$('.project_slide').slick('setPosition');
+		$('.project_slide').slick('slickGoTo', 0); 
+	})
+
+	$('.project_slide').slick({
+		arrows:false,
+		autoplay: false,
+		slidesToShow:2,
+		infinite:false,
+	});
+})
 
 
 
